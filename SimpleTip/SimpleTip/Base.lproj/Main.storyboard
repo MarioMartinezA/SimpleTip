@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17C2120" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="IJA-kV-zj4">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1114" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="IJA-kV-zj4">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,7 +14,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SimpleTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" id="dmC-y5-btY">
@@ -86,7 +86,18 @@
                             <outletCollection property="gestureRecognizers" destination="Tb7-zT-OlJ" appends="YES" id="Lj9-ho-wEM"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Tip Calculator" id="kTB-2T-jbW"/>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="kTB-2T-jbW">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="oXj-IM-WR4">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nMB-Je-BMs">
+                                <rect key="frame" x="233" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Settings"/>
+                            </button>
+                            <connections>
+                                <segue destination="Igb-Jk-zdO" kind="push" id="Sj4-V0-Z32"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billField" destination="JNh-Eg-VXp" id="VNN-Ld-oC4"/>
                         <outlet property="tipControl" destination="umI-HM-xBi" id="p7B-eq-cLE"/>
@@ -102,6 +113,21 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="469.5" y="119.5"/>
+        </scene>
+        <!--Settings Veiw Controller View Controller-->
+        <scene sceneID="muR-kH-xcP">
+            <objects>
+                <viewController id="Igb-Jk-zdO" customClass="SettingsVeiwControllerViewController" customModule="SimpleTip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vi8-lS-9bd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dXE-Mo-uEY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sAd-hT-otL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="119"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="54z-t1-REB">
@@ -125,6 +151,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+        <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
     </simulatedMetricsContainer>
 </document>
