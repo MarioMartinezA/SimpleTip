@@ -17,10 +17,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalLable: UILabel!
     
     @IBOutlet weak var tipControl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print("In the viewDidLoad")
+        let defaults = UserDefaults.standard
+        
+        tipControl.selectedSegmentIndex = defaults.integer(forKey: "defaultTip")
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let defaults = UserDefaults.standard
+        
+        tipControl.selectedSegmentIndex = defaults.integer(forKey: "defaultTip")
+        
+        calTip()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +49,13 @@ class ViewController: UIViewController {
     }
     @IBAction func calculateTip(_ sender: AnyObject) {
         
+        calTip()
+        
+    }
+    
+    func calTip() {
         let tipPercentages = [0.18, 0.2, 0.25]
+        
         
         let bill = Double(billField.text!) ?? 0
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
@@ -42,7 +63,8 @@ class ViewController: UIViewController {
         
         tipLable.text = String(format: "$%.2f", tip)
         totalLable.text = String(format: "$%.2f", total)
-        
     }
+    
+    
 }
 

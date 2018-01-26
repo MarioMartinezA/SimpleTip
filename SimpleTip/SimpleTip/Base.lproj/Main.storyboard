@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1114" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="IJA-kV-zj4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17C2120" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="IJA-kV-zj4">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -92,10 +92,10 @@
                                 <rect key="frame" x="233" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Settings"/>
+                                <connections>
+                                    <segue destination="Igb-Jk-zdO" kind="push" id="8V5-ye-Ruh"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <segue destination="Igb-Jk-zdO" kind="push" id="Sj4-V0-Z32"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -121,9 +121,33 @@
                     <view key="view" contentMode="scaleToFill" id="Vi8-lS-9bd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="06Z-Vq-pYv" userLabel="Tip Control">
+                                <rect key="frame" x="37" y="167" width="217" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="18%"/>
+                                    <segment title="20%"/>
+                                    <segment title="25%"/>
+                                </segments>
+                                <connections>
+                                    <action selector="defaultTip:" destination="Igb-Jk-zdO" eventType="valueChanged" id="h9h-c5-uWE"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Default" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ODq-Sr-3na">
+                                <rect key="frame" x="37" y="122" width="65" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="dXE-Mo-uEY"/>
+                    <connections>
+                        <outlet property="tipControl" destination="06Z-Vq-pYv" id="a6A-PR-1bo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAd-hT-otL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,6 +156,7 @@
         <!--Navigation Controller-->
         <scene sceneID="54z-t1-REB">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ESh-CR-Qss" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IJA-kV-zj4" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0pk-EO-1CL">
@@ -143,7 +168,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="foW-0o-Zt3"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ESh-CR-Qss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="59" y="120"/>
         </scene>
